@@ -1,0 +1,41 @@
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left-wrapper {
+    display: flex;
+    align-items: center;
+    .logo img {
+      width: 250px;
+    }
+    nav {
+      display: flex;
+      padding-left: 50px;
+      gap: 30px;
+      a {
+        color: #777;
+      }
+    }
+  }
+
+  .right-wrapper {
+    .contact-btn button {
+      border-style: none;
+      background-color: #075F40;
+      width: 150px;
+      height: 45px;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
+}
+
+
