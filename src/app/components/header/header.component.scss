@@ -1,26 +1,35 @@
+@import '../../../variables.scss';
+
 a {
   color: #000;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
+// @mixin flex-between {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
 :host {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-between;
 
   .left-wrapper {
     display: flex;
     align-items: center;
     .logo img {
-      width: 250px;
+      width: 300px;
     }
     nav {
       display: flex;
       padding-left: 50px;
       gap: 30px;
       a {
-        color: #777;
+        color: #fff;
+        transition: .3s;
+        &:hover {
+          color: lighten(#029a65, 20%);
+        }
       }
     }
   }
@@ -28,10 +37,12 @@ a {
   .right-wrapper {
     .contact-btn button {
       border-style: none;
-      background-color: #075F40;
-      width: 150px;
+      border-radius: 3px;
+      background-color: #029a65;
+      width: 170px;
       height: 45px;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1rem;
       color: #fff;
     }
   }
