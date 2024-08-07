@@ -1,9 +1,30 @@
 @import '../../../variables.scss';
 
-a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
+nav {
+  display: flex;
+  padding-left: 50px;
+  gap: 30px;
+  a {
+    color: #fff;
+    transition: .3s;
+    &:hover {
+      color: lighten(#029a65, 10%);
+    }
+  }
+}
+.contact-btn button {
+  border-style: none;
+  border-radius: 3px;
+  background-color: #029a65;
+  width: 170px;
+  height: 45px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  transition: .3s;
+  &:hover {
+    background-color: lighten(#029a65, 10%);
+  }
 }
 // @mixin flex-between {
 //   display: flex;
@@ -13,40 +34,106 @@ a {
 
 :host {
   @include flex-between;
-
+  z-index: 2;
   .left-wrapper {
     display: flex;
     align-items: center;
     .logo img {
       width: 300px;
     }
-    nav {
-      display: flex;
-      padding-left: 50px;
-      gap: 30px;
-      a {
-        color: #fff;
-        transition: .3s;
-        &:hover {
-          color: lighten(#029a65, 20%);
-        }
-      }
-    }
   }
 
   .right-wrapper {
-    .contact-btn button {
-      border-style: none;
-      border-radius: 3px;
-      background-color: #029a65;
-      width: 170px;
-      height: 45px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #fff;
+    width: 100%;
+    .navigation {
+      @include flex-between;
+      .toggle-dropdown {
+        lucide-icon {
+          &:not(.active){
+            display: none;
+          }
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      overflow: hidden;
+
+      top: 6rem;
+      right: 24px;
+
+      width: 300px;
+      height: 0;
+      background-color: #fff;
+      border-radius: 15px;
+      transition: height .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      &.active {
+        height: 350px;
+        box-shadow: 0px 0px 50px 19px rgba(0,0,0,0.2);
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+        a {
+          color: #000;
+          font-weight: 500;
+          transition: .3s;
+          &:hover {
+            color: lighten(#029a65, 20%);
+          }
+        }
+      }
+      .contact-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .toggle-dropdown{
+      display: none;
     }
   }
+}
 
+@media screen and (max-width: 1150px) {
+  .navigation {
+    justify-content: end !important;
+    nav,
+    .contact-btn {
+    display: none !important;
+    }
+  }
+  .toggle-dropdown{
+    display: block !important;
+  }
+
+  .dropdown-menu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    left: auto;
+    right: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .left-wrapper {
+    .logo img {
+      width: 250px !important;
+    }
+  }
 }
 
 

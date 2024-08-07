@@ -2,17 +2,36 @@
   <div class="logo">
     <img src="./assets/icons/ifce-logo.png" alt="">
   </div>
-  <nav>
-    <a href="#">Pesquisa</a>
-    <a href="#">Extensão</a>
-    <a href="#">Inovação</a>
-    <a href="#">Pós Graduação</a>
-    <a href="#">Sobre</a>
-  </nav>
 </div>
 <div class="right-wrapper">
-  <div class="contact-btn">
-    <button app-button-layout>Contato</button>
+  <div class="navigation">
+    <nav>
+      <a href="#">Pesquisa</a>
+      <a href="#">Extensão</a>
+      <a href="#">Inovação</a>
+      <a href="#">Pós Graduação</a>
+      <a href="#">Sobre</a>
+    </nav>
+    <div class="contact-btn">
+      <button app-button-layout>Contato</button>
+    </div>
+    <div class="toggle-dropdown" (click)="toggleBtn()">
+      <lucide-icon name="menu" [size]="28" [strokeWidth]="3" [class.active]="!switchImg"></lucide-icon>
+      <lucide-icon name="x" [size]="28" [strokeWidth]="3" [class.active]="switchImg"></lucide-icon>
+    </div>
+  </div>
+
+  <div class="dropdown-menu" [class.active]="switchImg">
+    <nav>
+      <a href="#">Pesquisa</a>
+      <a href="#">Extensão</a>
+      <a href="#">Inovação</a>
+      <a href="#">Pós Graduação</a>
+      <a href="#">Sobre</a>
+    </nav>
+    <div class="contact-btn">
+      <button app-button-layout>Contato</button>
+    </div>
   </div>
 </div>
 
