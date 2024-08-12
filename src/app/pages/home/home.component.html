@@ -14,3 +14,15 @@
   </section>
   <img src="../../../assets/gradient-bg.png" class="gradient-bg" alt="">
 </div>
+
+<div class="deppi-introduction-container">
+  <div class="cards">
+    @for(card of arrayCards; track $index) {
+      @if($index % 2 !== 0) {
+        <app-card-layout [cardInfos]="card" cardReverse="reverse"></app-card-layout>
+      } @else {
+        <app-card-layout [cardInfos]="card"></app-card-layout>
+      }
+    }
+  </div>
+</div>

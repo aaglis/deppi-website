@@ -1,0 +1,14 @@
+<div class="left-wrapper">
+  <div class="title-container">
+    <div class="pre-title">
+      <div class="line"></div> <p>{{ cardInfos?.preTitle}}</p>
+    </div>
+    <h1 class="title">{{ cardInfos?.title}}</h1>
+  </div>
+  <div class="description" [innerHTML]="cardInfos?.description"></div>
+</div>
+<div class="right-wrapper">
+  <div class="container-img">
+    <img [src]="cardInfos?.img" alt="">
+  </div>
+</div>
