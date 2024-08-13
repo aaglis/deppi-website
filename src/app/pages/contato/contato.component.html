@@ -1,1 +1,40 @@
-<p>contato works!</p>
+<app-header [darkTheme]="true"></app-header>
+
+<div class="container">
+    <div class="title">
+      <h1>Entre em contato com a gente!</h1>
+      <h3>Preenchendo o formulário ou através nas nossas redes sociais</h3>
+    </div>
+    <div class="contact-container">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <h2>Formulário</h2>
+        <input type="text" placeholder="Seu nome">
+        <input type="email" placeholder="Seu email">
+        <textarea placeholder="Sua mensagem"></textarea>
+        <button app-button-layout>Enviar</button>
+      </form>
+      <div class="social-media-container">
+        <div class="managers-area">
+          <h2>Responsáveis</h2>
+          <ul>
+            @for (item of managersArray; track $index) {
+              <div class="manager">
+                <li><strong>{{ item.name }}</strong></li>
+                <div class="details">
+                  <p> {{ item.role }}</p> -
+                  <p>Fone: {{ item.fone }}</p> -
+                  <p>E-mail: {{ item.email }}</p>
+                </div>
+              </div>
+            }
+          </ul>
+        </div>
+        <div class="socials">
+          <lucide-icon name="facebook" [size]="30"></lucide-icon>
+          <lucide-icon name="instagram" [size]="30"></lucide-icon>
+          <lucide-icon name="linkedin" [size]="30"></lucide-icon>
+          <lucide-icon name="youtube" [size]="30"></lucide-icon>
+        </div>
+      </div>
+    </div>
+</div>

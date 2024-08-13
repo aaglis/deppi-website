@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonLayoutComponent } from '../button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
 
@@ -11,6 +11,7 @@ import { LucideAngularModule } from 'lucide-angular';
 })
 export class HeaderComponent {
   switchImg: boolean = false
+  @Input() darkTheme: boolean = false
 
   toggleBtn() {
     this.switchImg = !this.switchImg

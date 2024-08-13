@@ -38,8 +38,18 @@ nav {
   .left-wrapper {
     display: flex;
     align-items: center;
-    .logo img {
+    .logo .img {
+      background-image: url('../../../assets/icons/ifce-logo.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       width: 300px;
+      height: 130px;
+    }
+    &.dark-theme {
+      .logo .img {
+        background-image: url('../../../assets/icons/ifce-logo-dark.png');
+      }
     }
   }
 
@@ -54,6 +64,15 @@ nav {
           }
           color: #fff;
           cursor: pointer;
+        }
+      }
+    }
+
+    &.dark-theme {
+      .navigation a {
+        color: #000;
+        &:hover {
+          color: lighten(#029a65, 10%);
         }
       }
     }
@@ -130,8 +149,9 @@ nav {
 
 @media screen and (max-width: 400px) {
   .left-wrapper {
-    .logo img {
+    .logo .img {
       width: 250px !important;
+      height: 110px !important;
     }
   }
 }
