@@ -1,17 +1,19 @@
-import { Component, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IManager } from '../../core/interfaces/manager.interface';
 import { LucideAngularModule } from 'lucide-angular';
 import { ButtonLayoutComponent } from '../../components/button-layout/button-layout.component';
+import { TruncatePipe } from '../../core/pipes/truncate.pipe';
 
 @Component({
   selector: 'app-contato',
   standalone: true,
-  imports: [HeaderComponent, ReactiveFormsModule, CommonModule, LucideAngularModule, ButtonLayoutComponent],
+  imports: [HeaderComponent, ReactiveFormsModule, CommonModule, LucideAngularModule, ButtonLayoutComponent, TruncatePipe],
   templateUrl: './contato.component.html',
-  styleUrl: './contato.component.scss'
+  styleUrl: './contato.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ContatoComponent {
 

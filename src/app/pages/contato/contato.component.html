@@ -7,7 +7,6 @@
     </div>
     <div class="contact-container">
       <form [formGroup]="form" (ngSubmit)="submitForm()">
-        <h2>Formulário</h2>
         <input type="text" placeholder="Seu nome">
         <input type="email" placeholder="Seu email">
         <textarea placeholder="Sua mensagem"></textarea>
@@ -16,18 +15,33 @@
       <div class="social-media-container">
         <div class="managers-area">
           <h2>Responsáveis</h2>
-          <ul>
+          <swiper-container
+            slides-per-view="2"
+            navigation="true"
+            pagination="true"
+            pagination-clickable="true"
+            space-between="20"
+            autoplay-delay="5000"
+          >
             @for (item of managersArray; track $index) {
-              <div class="manager">
-                <li><strong>{{ item.name }}</strong></li>
-                <div class="details">
-                  <p> {{ item.role }}</p> -
-                  <p>Fone: {{ item.fone }}</p> -
-                  <p>E-mail: {{ item.email }}</p>
+              <swiper-slide>
+                <div class="manager">
+                  <p class="title-role" [title]="item.role">{{ item.role | truncate }}</p>
+                  <p class="title-name">{{ item.name }}</p>
+                  <div class="details">
+                    @if(item.fone && item.email) {
+                      <p>Fone: {{ item.fone }}</p>
+                      <p>E-mail: {{ item.email }}</p>
+                    } @else if(item.email && !item.fone) {
+                      <p>E-mail: {{ item.email }}</p>
+                    } @else if(item.fone && !item.email) {
+                      <p>Fone: {{ item.fone }}</p>
+                    }
+                  </div>
                 </div>
-              </div>
+              </swiper-slide>
             }
-          </ul>
+          </swiper-container>
         </div>
         <div class="socials">
           <lucide-icon name="facebook" [size]="30"></lucide-icon>
