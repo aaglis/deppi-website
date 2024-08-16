@@ -34,7 +34,46 @@ nav {
 
 :host {
   @include flex-between;
-  z-index: 2;
+  position: fixed;
+  width: 100%;
+  max-width: 1720px;
+  padding: 0 20px;
+  margin: 0 auto;
+  z-index: 5;
+  transition: .3s;
+  border-radius: 35px;
+  &.shadow {
+    padding: 10px 25px;
+    &:not(.dark-theme) {
+      background-color: lighten(#029a65, 10%);
+      .img {
+        height: 70px !important;
+      }
+     button {
+      height: 40px;
+      width: 120px;
+      background-color: #fff;
+      color: #029a65;
+     }
+    }
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+  }
+  &.dark-theme {
+    background-color: #777;
+    .left-wrapper {
+      .logo .img {
+        background-image: url('../../../assets/icons/ifce-logo-dark.png');
+      }
+    }
+    .right-wrapper {
+      .navigation a {
+        color: #000;
+        &:hover {
+          color: lighten(#029a65, 10%);
+        }
+      }
+    }
+  }
   .left-wrapper {
     display: flex;
     align-items: center;
@@ -45,11 +84,6 @@ nav {
       background-repeat: no-repeat;
       width: 300px;
       height: 130px;
-    }
-    &.dark-theme {
-      .logo .img {
-        background-image: url('../../../assets/icons/ifce-logo-dark.png');
-      }
     }
   }
 
@@ -64,15 +98,6 @@ nav {
           }
           color: #fff;
           cursor: pointer;
-        }
-      }
-    }
-
-    &.dark-theme {
-      .navigation a {
-        color: #000;
-        &:hover {
-          color: lighten(#029a65, 10%);
         }
       }
     }
