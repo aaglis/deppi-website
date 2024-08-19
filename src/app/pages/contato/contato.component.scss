@@ -56,6 +56,8 @@
     }
     .social-media-container {
       .managers-area {
+        max-width: 1100px;
+        transition: .3s;
         h2 {
           text-align: center;
         }
@@ -127,4 +129,85 @@
     height: 90px;
   }
 
+}
+
+@media screen and (max-width: 1150px) {
+:host {
+  .container {
+    .title {
+      h1 {
+        font-size: 3.5rem;
+      }
+      h3 {
+        padding-top: 10px;
+        font-size: 1.4rem;
+      }
+    }
+    .managers-area {
+      width: 768px;
+    }
+  }
+}
+}
+
+@media screen and (max-width: 950px) {
+  :host {
+    .container {
+      .title {
+        h1 {
+          font-size: 3.5rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+      .managers-area {
+        width: 700px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    .container {
+      .title {
+        h1 {
+          font-size: 2.8rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+      .managers-area {
+        width: 600px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact-container {
+    width: 100%;
+    form {
+      width: 100% !important;
+    }
+  }
+
+  .managers-area {
+    width: 500px !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .managers-area {
+    width: 400px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .managers-area {
+    max-width: auto;
+    width: 350px !important;
+  }
 }

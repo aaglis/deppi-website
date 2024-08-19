@@ -16,12 +16,13 @@
         <div class="managers-area">
           <h2>Responsáveis</h2>
           <swiper-container
-            slides-per-view="2"
-            navigation="true"
-            pagination="true"
-            pagination-clickable="true"
-            space-between="20"
-            autoplay-delay="5000"
+          navigation="true"
+          pagination="true"
+          pagination-clickable="true"
+          space-between="20"
+          autoplay-delay="5000"
+          slides-per-view="2"
+          [breakpoints]="breakpoints"
           >
             @for (item of managersArray; track $index) {
               <swiper-slide>

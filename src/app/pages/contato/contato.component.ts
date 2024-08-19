@@ -52,6 +52,13 @@ export class ContatoComponent {
     message: ['', Validators.required, Validators.minLength(10)]
   })
 
+  breakpoints = {
+    1400: { slidesPerView: 2 },
+    1000: { slidesPerView: 2 },
+    600: { slidesPerView: 1 },
+    400: { slidesPerView: 1 }
+  };
+
   submitForm() {
     if (this.form.valid) {
       this.formSended = true
