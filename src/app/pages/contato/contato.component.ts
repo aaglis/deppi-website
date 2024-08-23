@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, inject } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,11 @@ import { TruncatePipe } from '../../core/pipes/truncate.pipe';
   styleUrl: './contato.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ContatoComponent {
+export class ContatoComponent implements OnInit{
+
+  ngOnInit(): void {
+    scrollTo(0, 0)
+  }
 
   managersArray: IManager[] = [
     {

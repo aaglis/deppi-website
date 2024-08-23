@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, Input, inject } from '@angular/core';
 import { ButtonLayoutComponent } from '../button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ButtonLayoutComponent, LucideAngularModule],
+  imports: [ButtonLayoutComponent, LucideAngularModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -39,8 +40,6 @@ export class HeaderComponent implements AfterViewInit{
       }
       this.lastScrollTop = scrollY
     })
-
-
   }
 
 }
