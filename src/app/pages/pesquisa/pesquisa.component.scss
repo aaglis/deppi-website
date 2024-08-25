@@ -2,48 +2,16 @@
 
 :host {
   @include max-width-1720;
-
+  padding: 0 24px;
   section {
     .initial-container {
-      max-width: 1440px;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      gap: 50px;
-      .left {
-        max-width: 700px;
-        padding-top: 5rem;
-
-        .highlight-text {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          .line {
-            width: 30px;
-            height: 2px;
-            background-color: #029a65;
-          }
-          p {
-            font-weight: 500;
-            text-transform: uppercase;
-            color: #029a65;
-          }
-        }
-        h1 {
-          font-size: 3.5rem;
-        }
-        p {
-          width: 80%;
-        }
-      }
-      .right {
-        max-width: 500px;
-        max-height: 600px;
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+      padding-top: 4rem;
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        app-card-layout {
+          max-width: 1200px;
         }
       }
     }
