@@ -1,0 +1,27 @@
+@import '../../../variables.scss';
+
+:host {
+  @include max-width-1720;
+  padding: 0 24px;
+
+  .extensao-container {
+    padding-top: 3rem;
+    app-card-layout {
+      max-width: 1300px;
+    }
+    .gestores-container {
+      padding-top: 3rem;
+      h1, .description {
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .description {
+        margin: 0 auto;
+        max-width: 600px;
+      }
+    }
+  }
+
+}
