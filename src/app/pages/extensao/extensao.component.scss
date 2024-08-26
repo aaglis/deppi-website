@@ -6,20 +6,46 @@
 
   .extensao-container {
     padding-top: 3rem;
-    app-card-layout {
-      max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    app-card-layout,
+    .managers-details {
+      max-width: 1200px;
     }
-    .gestores-container {
-      padding-top: 3rem;
-      h1, .description {
+
+    .managers-details {
+      margin: 0 auto;
+      padding: 2rem 0;
+      h1 {
+        font-size: 2.5rem;
         text-align: center;
       }
-      h1 {
-        font-size: 2.2rem;
-      }
-      .description {
-        margin: 0 auto;
-        max-width: 600px;
+      .container-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          .number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #029a65;
+
+            &.alternative {
+              border-color: darken(#029a65, 20%);
+            }
+          }
+          .description {
+            width: 100%;
+          }
+        }
       }
     }
   }
