@@ -20,5 +20,8 @@ export const routes: Routes = [
   }, {
     path: 'extensao',
     loadComponent: () => import('./pages/extensao/extensao.component').then(m => m.ExtensaoComponent)
+  }, {
+    path: 'inovacao',
+    loadComponent: () => import('./pages/inovacao/inovacao.component').then(m => m.InovacaoComponent)
   }
 ];

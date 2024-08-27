@@ -1,0 +1,35 @@
+<app-header [darkTheme]="true"></app-header>
+
+
+<div class="container-inovacao">
+  <app-card-layout [cardInfos]="inovacaoIntroduction"></app-card-layout>
+
+  <div class="comprometimentos-container">
+    <div class="title">
+      <h1>Obrigações contratuais</h1>
+      <p>Segundo a <a href="https://ifce.edu.br/instituto/documentos-institucionais/resolucoes/2019-2/resolucao-125.pdf">RESOLUÇÃO N°125</a>:</p>
+    </div>
+
+    <div class="itens">
+      @for(item of comprometimentosArray; track $index) {
+        <div class="item">
+          <div class="highlight-text">
+            <div class="line"></div>
+            <p>{{ item.compName }}</p>
+          </div>
+          <div class="description" [innerHTML]="getDescription($index)">
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="more-informations">
+      <a href="https://ifce.edu.br/instituto/documentos-institucionais/resolucoes/2019-2/resolucao-125.pdf" target="_blank">
+        <button app-button-layout>Ver Resolução N°125</button>
+      </a>
+      <a href="https://ifce.edu.br/prpi/documentos" target="_blank">
+        <button app-button-layout>Outros documentos</button>
+      </a>
+    </div>
+  </div>
+</div>
