@@ -24,7 +24,7 @@ export class PosGraduacaoComponent {
     },
     {
       title: 'Doutorado',
-      details: 'Os doutorados são cursos de pós-graduação stricto sensu destinados a formar profissionais que desejam obter titulação com grau de doutor, com foco na carreira acadêmica e na área de inovação. No IFCE, esses cursos são ofertados em parceria com outras instituições que já tem programas de pós-graduação na área de interesse, por isso, são chamados de doutorados interinstitucionais.'
+      details: 'Os doutorados são cursos de pós-graduação stricto sensu destinados a formar profissionais que desejam obter titulação com grau de doutor, com foco na carreira acadêmica e na área de inovação. No IFCE, os doutorados são interinstitucionais, ou seja, esses cursos são ofertados em parceria com outras instituições que já tem programas de pós-graduação na área de interesse.'
     }
   ];
   selectedItem: number = 0;
