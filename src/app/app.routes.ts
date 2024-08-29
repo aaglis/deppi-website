@@ -23,5 +23,9 @@ export const routes: Routes = [
   }, {
     path: 'inovacao',
     loadComponent: () => import('./pages/inovacao/inovacao.component').then(m => m.InovacaoComponent)
+  },
+  {
+    path: 'pos-graduacao',
+    loadComponent: () => import('./pages/pos-graduacao/pos-graduacao.component').then(m => m.PosGraduacaoComponent)
   }
 ];
