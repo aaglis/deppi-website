@@ -2,5 +2,34 @@
 
 
 <div class="container-pos">
-  <h1>Pós Graduação</h1>
+  <app-card-layout [cardInfos]="cardPosGraduacao"></app-card-layout>
+
+  <div class="options-container">
+    <div class="nav">
+      @for(item of items; track $index) {
+        <div class="nav-item" [class.active]="selectedItem == $index" (click)="selectItem($index)">
+          {{ item.title }}
+        </div>
+      }
+      <div class="active-indicator" [ngStyle]="{'left': (selectedItem * (100 / items.length)) + '%'}"></div>
+    </div>
+
+    <div class="details">
+      @for(item of items; track $index) {
+        @if(selectedItem === $index) {
+          <div class="item-details">
+            {{item.details}}
+          </div>
+        }
+      }
+    </div>
+  </div>
+
+      <!-- <div
+        class="nav-item"
+        *ngFor="let item of items; let i = index"
+        [class.active]="selectedItem === i"
+        (click)="selectItem(i)">
+        {{ item }}
+      </div> -->
 </div>
