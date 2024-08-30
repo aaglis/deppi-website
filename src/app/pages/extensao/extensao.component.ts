@@ -21,13 +21,13 @@ export class ExtensaoComponent implements OnInit{
     {
       title: 'Extensão Universitária',
       preTitle: 'Transformação Social',
-      description: 'O Plano Nacional de Extensão Universitária define extensão como um processo educativo, cultural e científico que articula ensino e pesquisa de forma indissociável, viabilizando uma relação transformadora entre a instituição de ensino superior (IES) e a sociedade.',
+      description: 'O Plano Nacional de Extensão Universitária define extensão como um processo educativo, cultural e científico que articula ensino e pesquisa de forma indissociável, <span>viabilizando uma relação transformadora entre a instituição de ensino superior (IES) e a sociedade.</span>',
       img: 'assets/extensao/projeto.jpg'
     },
     {
       title: 'Atribuições dos Gestores de Extensão',
       preTitle: 'Compromisso',
-      description: 'Gestores de extensão são os servidores, docentes ou técnicos administrativos,designados através de portaria, para coordenar todas as ações de extensão promovidas pelos campi em que atuam.',
+      description: 'Gestores de extensão são os servidores, docentes ou técnicos administrativos,designados através de portaria, para <span>coordenar todas as ações de extensão promovidas pelos campi em que atuam.</span>',
       img: 'assets/extensao/gestores.jpg'
     }
   ]

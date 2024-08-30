@@ -20,7 +20,7 @@ export class InovacaoComponent implements OnInit{
   inovacaoIntroduction: ICards = {
     title: 'Inovação',
     preTitle: 'O que nos move',
-    description: 'A inovação no IFCE acontece de forma integrada, promovendo mudanças que impactam vidas, negócios e a sociedade. Aqui, criatividade e ciência caminham juntas para transformar realidades e abrir novos horizontes para o desenvolvimento tecnológico e social.',
+    description: 'A inovação no IFCE acontece de forma integrada, promovendo mudanças que impactam vidas, negócios e a sociedade. Aqui, <span>criatividade e ciência caminham juntas para transformar realidades e abrir novos horizontes para o desenvolvimento tecnológico e social.</span>',
     img: 'assets/inovacao/materiais.jpg'
   };
 
