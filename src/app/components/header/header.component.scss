@@ -37,15 +37,18 @@ nav {
   position: fixed;
   width: 100%;
   // max-width: 1720px;
-  margin: 0 auto;
+  // margin: 0 auto;
   z-index: 5;
   border-radius: 35px;
   transition: .3s;
   &.shadow:not(.dark-theme) {
-    padding: 10px 25px;
+    padding: 10px 25px !important;
     background-color: lighten(#029a65, 10%);
     .img {
       height: 70px !important;
+    }
+    a:hover {
+      color: #fff;
     }
     button {
      height: 40px;
@@ -149,7 +152,7 @@ nav {
 
 @media screen and (max-width: 1150px) {
   :host {
-    position: inherit;
+    // position: inherit;
     &.shadow:not(.dark-theme) {
       padding: 0 24px;
       background-color: transparent;

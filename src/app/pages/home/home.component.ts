@@ -1,25 +1,19 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ICards } from '../../core/interfaces/cards.interface';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
 import { ButtonLayoutComponent } from '../../components/button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, CardLayoutComponent, ButtonLayoutComponent, LucideAngularModule],
+  imports: [HeaderComponent, CardLayoutComponent, ButtonLayoutComponent, LucideAngularModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
-  private router = inject(Router)
-
-  redirectToContato() {
-    this.router.navigate(['/contato'])
-  }
 
   arrayCards: ICards[] = [
     {

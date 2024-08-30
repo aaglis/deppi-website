@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject } from '@angular/core';
 import { ButtonLayoutComponent } from '../button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
 import { RouterLink } from '@angular/router';
@@ -11,32 +11,52 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit{
-  private elementReft = inject(ElementRef)
+  private elementRef = inject(ElementRef)
 
   switchImg: boolean = false
-  @Input() darkTheme: boolean = false
+  lastScrollTop:number = 0
+
+  closeNavbar() {
+    // Sua lógica para fechar a navbar (por exemplo, esconder o menu)
+    this.switchImg = false;
+    console.log('Navbar fechada');
+  }
+
+  // Detecção de clique fora da navbar
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.closeNavbar();
+    }
+  }
+
+
+  setHeaderTheme(isDark: boolean) {
+    console.log(isDark)
+    if(isDark === true) {
+      this.elementRef.nativeElement.classList.add('dark-theme');
+    } else {
+      this.elementRef.nativeElement?.classList.remove('dark-theme');
+    }
+  }
 
   toggleBtn() {
     this.switchImg = !this.switchImg
+    console.log(this.switchImg)
   }
 
-  lastScrollTop:number = 0
 
   ngAfterViewInit() {
-    if(this.darkTheme) {
-      this.elementReft.nativeElement.classList.add('dark-theme')
-    }
     window.addEventListener('scroll', () => {
-      console.log(scrollY)
       if(scrollY > 100) {
-        this.elementReft.nativeElement.classList.add('shadow')
+        this.elementRef.nativeElement.classList.add('shadow')
       } else {
-        this.elementReft.nativeElement.classList.remove('shadow')
+        this.elementRef.nativeElement.classList.remove('shadow')
       }
       if((scrollY > this.lastScrollTop) && (innerWidth > 1150)) {
-        this.elementReft.nativeElement.style.top = '-150px'
+        this.elementRef.nativeElement.style.top = '-150px'
       } else if ((scrollY < this.lastScrollTop) && (innerWidth > 1150)) {
-        this.elementReft.nativeElement.style.top = '10px'
+        this.elementRef.nativeElement.style.top = '10px'
       }
       this.lastScrollTop = scrollY
     })
