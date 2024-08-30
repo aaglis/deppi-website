@@ -60,10 +60,6 @@ nav {
     a:hover {
       color: #fff;
     }
-    button {
-     background-color: #029a65;
-     color: #fff;
-    }
   }
   &.dark-theme {
     &.shadow {
@@ -81,9 +77,6 @@ nav {
           }
         }
         .navigation {
-          .contact-btn a button {
-
-          }
           a {
             color: #fff;
             &:hover {

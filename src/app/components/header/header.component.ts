@@ -25,7 +25,6 @@ export class HeaderComponent implements AfterViewInit{
 
   closeNavbar() {
     this.switchImg = false;
-    console.log('Navbar fechada');
   }
 
   actualUrl(event: Event) {
@@ -42,7 +41,6 @@ export class HeaderComponent implements AfterViewInit{
 
 
   setHeaderTheme(isDark: boolean) {
-    console.log(isDark)
     if(isDark === true) {
       this.elementRef.nativeElement.classList.add('dark-theme');
     } else {
@@ -52,7 +50,6 @@ export class HeaderComponent implements AfterViewInit{
 
   toggleBtn() {
     this.switchImg = !this.switchImg
-    console.log(this.switchImg)
   }
 
 

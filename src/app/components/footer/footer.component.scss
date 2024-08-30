@@ -1,0 +1,87 @@
+@import '../../../variables.scss';
+
+:host {
+  display: flex;
+  width: 100%;
+  background-color: lighten(#029a65, 10%);
+  .container {
+    width: 100%;
+    @include max-width-1720;
+    padding: 2rem 24px 2rem 24px;
+    .container-infos {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      font-style: italic;
+      .left-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: #ffffff;
+        font-weight: 500;
+        .title {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .right-wrapper .contact{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: #ffffff;
+        font-weight: 500;
+        .email a {
+          color: #222;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+      }
+    }
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      gap: 15px;
+      // .icon-container {
+      //   padding: 10px;
+      //   border-radius: 50%;
+      //   background-color: #fff;
+      // }
+      lucide-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: .3s;
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  .container-infos {
+    flex-direction: column;
+    gap: 40px;
+    .left-wrapper {
+      align-items: center;
+      text-align: center;
+    }
+    .right-wrapper {
+      align-items: center;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+

@@ -2,13 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { filter, Observable } from 'rxjs';
-import { LoaderComponent } from './components/loader/loader.component';
 import { LucideAngularModule } from 'lucide-angular';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, LoaderComponent, LucideAngularModule],
+  imports: [RouterOutlet, HeaderComponent, LucideAngularModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
     if ((routeName === '/home') || (routeName === '/')) {
       this.header?.setHeaderTheme(false);
     } else {
-      console.log('é diferente de /home')
       this.header?.setHeaderTheme(true);
     }
   }
