@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChildren } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
 import { ICards } from '../../core/interfaces/cards.interface';
@@ -11,7 +11,12 @@ import { NgStyle } from '@angular/common';
   templateUrl: './pos-graduacao.component.html',
   styleUrl: './pos-graduacao.component.scss'
 })
-export class PosGraduacaoComponent {
+export class PosGraduacaoComponent implements OnInit{
+
+  ngOnInit(): void {
+    scrollTo(0, 0)
+  }
+
 
   items: { title: string, details: string}[] = [
     {

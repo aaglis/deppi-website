@@ -1,10 +1,5 @@
-@defer {
-  <div class="container-header">
+<div class="container-header">
     <app-header #HeaderComponent></app-header>
-  </div>
-  <router-outlet></router-outlet>
-}
-@loading{
-  <!-- <img src="../assets/animated/spinner.gif" alt=""> -->
-    <app-loader></app-loader>
-}
+</div>
+<router-outlet></router-outlet>
+<lucide-icon name="arrow-up" size="40" (click)="scrollToTop()"></lucide-icon>

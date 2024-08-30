@@ -7,14 +7,14 @@
 <div class="right-wrapper">
   <div class="navigation">
     <nav>
-      <a href="#" routerLink="/pesquisa">Pesquisa</a>
-      <a href="#" routerLink="/extensao">Extensão</a>
-      <a href="#" routerLink="/inovacao">Inovação</a>
-      <a href="#" routerLink="/pos-graduacao">Pós Graduação</a>
-      <a href="" (click)="actualUrl($event)">Sobre</a>
+      <a #link href="#" routerLink="/pesquisa">Pesquisa</a>
+      <a #link href="#" routerLink="/extensao">Extensão</a>
+      <a #link href="#" routerLink="/inovacao">Inovação</a>
+      <a #link href="#" routerLink="/pos-graduacao">Pós Graduação</a>
+      <a #link href="" (click)="actualUrl($event)">Sobre</a>
     </nav>
     <div class="contact-btn">
-      <a href="" routerLink="/contato"><button app-button-layout>Contato</button></a>
+      <a #link href="" routerLink="/contato"><button app-button-layout>Contato</button></a>
     </div>
     <div class="toggle-dropdown" (click)="toggleBtn()">
       <lucide-icon name="menu" [size]="28" [strokeWidth]="3" [class.active]="!switchImg"></lucide-icon>
@@ -24,14 +24,14 @@
 
   <div class="dropdown-menu" [class.active]="switchImg">
     <nav>
-      <a href="#" routerLink="/pesquisa">Pesquisa</a>
-      <a href="#" routerLink="/extensao">Extensão</a>
-      <a href="#" routerLink="/inovacao">Inovação</a>
-      <a href="#" routerLink="/pos-graduacao">Pós Graduação</a>
-      <a href="#">Sobre</a>
+      <a #link href="#" routerLink="/pesquisa">Pesquisa</a>
+      <a #link href="#" routerLink="/extensao">Extensão</a>
+      <a #link href="#" routerLink="/inovacao">Inovação</a>
+      <a #link href="#" routerLink="/pos-graduacao">Pós Graduação</a>
+      <a #link href="" (click)="actualUrl($event)">Sobre</a>
     </nav>
     <div class="contact-btn">
-      <a href="" routerLink="/contato"><button app-button-layout>Contato</button></a>
+      <a #link href="" routerLink="/contato"><button app-button-layout>Contato</button></a>
     </div>
   </div>
 </div>

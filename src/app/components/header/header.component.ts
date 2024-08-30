@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, ViewChildren, QueryList } from '@angular/core';
 import { ButtonLayoutComponent } from '../button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
 import { Router, RouterLink } from '@angular/router';
@@ -12,26 +12,27 @@ import { RouteRedirectService } from '../../core/services/route-redirect.service
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit{
+  private router = inject(Router)
   private elementRef = inject(ElementRef)
   private routerRedirect = inject(RouteRedirectService)
 
+  @ViewChildren('link') links?: QueryList<ElementRef>
+
   switchImg: boolean = false
   lastScrollTop:number = 0
+
+
+
+  closeNavbar() {
+    this.switchImg = false;
+    console.log('Navbar fechada');
+  }
 
   actualUrl(event: Event) {
     event.preventDefault()
     this.routerRedirect.navigateToSobre()
   }
 
-  private router = inject(Router)
-
-  closeNavbar() {
-    // Sua lógica para fechar a navbar (por exemplo, esconder o menu)
-    this.switchImg = false;
-    console.log('Navbar fechada');
-  }
-
-  // Detecção de clique fora da navbar
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
@@ -56,13 +57,18 @@ export class HeaderComponent implements AfterViewInit{
 
 
   ngAfterViewInit() {
+    if(this.router.url === '/home') {
+      this.setHeaderTheme(false)
+    } else {
+      this.setHeaderTheme(true)
+    }
     window.addEventListener('scroll', () => {
       if(scrollY > 100) {
         this.elementRef.nativeElement.classList.add('shadow')
       } else {
         this.elementRef.nativeElement.classList.remove('shadow')
       }
-      if((scrollY > this.lastScrollTop)) {
+      if((scrollY > this.lastScrollTop)  && (innerWidth > 1150)) {
         this.elementRef.nativeElement.style.top = '-150px'
       } else if ((scrollY < this.lastScrollTop) && (innerWidth > 1150)) {
         this.elementRef.nativeElement.style.top = '10px'
@@ -71,6 +77,13 @@ export class HeaderComponent implements AfterViewInit{
       }
       this.lastScrollTop = scrollY
     })
+
+    this.links?.forEach(link => {
+      link.nativeElement.addEventListener('click', () => {
+          this.closeNavbar();
+      });
+    });
+
   }
 
   scrollToSobre() {

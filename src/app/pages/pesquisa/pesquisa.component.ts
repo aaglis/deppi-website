@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
 import { ICards } from '../../core/interfaces/cards.interface';
@@ -10,7 +10,11 @@ import { ICards } from '../../core/interfaces/cards.interface';
   templateUrl: './pesquisa.component.html',
   styleUrl: './pesquisa.component.scss'
 })
-export class PesquisaComponent {
+export class PesquisaComponent implements OnInit {
+
+  ngOnInit(): void {
+    scrollTo(0, 0)
+  }
 
   cardsArray: ICards[] = [
     {

@@ -8,18 +8,15 @@
   }
 }
 
-.container-loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+lucide-icon {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  img {
-    width: 300px;
+  bottom: 10px;
+  right: 10px;
+  transition: .3s;
+  z-index: 999;
+  &:hover {
+    color: #029a65;
+    cursor: pointer;
+    bottom: 15px;
   }
 }

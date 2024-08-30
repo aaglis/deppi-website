@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
 import { ICards } from '../../core/interfaces/cards.interface';
@@ -11,7 +11,11 @@ import { ButtonLayoutComponent } from '../../components/button-layout/button-lay
   templateUrl: './inovacao.component.html',
   styleUrl: './inovacao.component.scss'
 })
-export class InovacaoComponent {
+export class InovacaoComponent implements OnInit{
+
+  ngOnInit(): void {
+    scrollTo(0, 0)
+  }
 
   inovacaoIntroduction: ICards = {
     title: 'Inovação',

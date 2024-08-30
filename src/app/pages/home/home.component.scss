@@ -171,19 +171,15 @@
       }
     }
 
-    // .deppi-introduction-container {
-    //   .cards {
-    //     app-card-layout {
-    //       // width: 100%;
-    //     }
-    //   }
-    // }
+    .deppi-introduction-container {
+      padding-top: 9rem;
+    }
   }
 }
 
 
 @media screen and (max-width: 768px) {
-  .text-wrapper {
+  .initial-container .text-wrapper {
     width: 100% !important;
     height: 100%;
     padding-top: 12rem;
@@ -223,6 +219,26 @@
           h3 {
             font-size: 3rem;
             line-height: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  :host {
+    .initial-container {
+      width: auto;
+      .text-wrapper {
+        padding-top: 10rem;
+        .titles {
+          h1 {
+            font-size: 2.8rem;
+          }
+          h3 {
+            font-size: 2.6rem;
+            line-height: 3.5rem;
           }
         }
       }

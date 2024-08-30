@@ -19,14 +19,14 @@ export class HomeComponent implements OnInit {
   private routerRedirectService = inject(RouteRedirectService)
 
   ngOnInit(): void {
+    scrollTo(0, 0)
     this.routerRedirectService.getSubject().subscribe((value) => {
       if(value) {
         this.scrollToSection()
       } else {
-        console.log('caiu aqui')
         setTimeout(() => {
           this.scrollToSection()
-        }, 300)
+        }, 200)
       }
     })
   }

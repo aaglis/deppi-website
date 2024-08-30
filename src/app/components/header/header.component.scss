@@ -41,12 +41,15 @@ nav {
   z-index: 10;
   border-radius: 35px;
   transition: .3s;
+  top: 10px;
   &.shadow {
     padding: 10px 25px !important;
     .img {
       height: 70px !important;
     }
     button {
+      background-color: #fff;
+      color: #029a65;
      height: 40px;
      width: 120px;
     }
@@ -58,13 +61,37 @@ nav {
       color: #fff;
     }
     button {
-     background-color: #fff;
-     color: #029a65;
+     background-color: #029a65;
+     color: #fff;
     }
   }
   &.dark-theme {
     &.shadow {
-      background-color: #fff;
+      background-color: lighten(#029a65, 10%);
+      .left-wrapper {
+        .logo .img {
+          background-image: url('../../../assets/icons/ifce-logo.png');
+          transition: .3s;
+        }
+      }
+      .right-wrapper {
+        .toggle-dropdown {
+          lucide-icon {
+            color: #fff !important;
+          }
+        }
+        .navigation {
+          .contact-btn a button {
+
+          }
+          a {
+            color: #fff;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
       a {
         color: #fff;
         &:hover {
@@ -169,6 +196,7 @@ nav {
   :host {
     // background-color: #fff;
     border-radius: 0;
+    top: 0 !important;
     &.shadow:not(.dark-theme) {
       // padding: 0 24px;
       border-radius: 0;
@@ -212,10 +240,43 @@ nav {
 }
 
 @media screen and (max-width: 400px) {
-  .left-wrapper {
-    .logo .img {
-      width: 250px !important;
-      height: 110px !important;
+  :host {
+    padding: 20px 24px !important;
+    .left-wrapper {
+      .logo .img {
+        width: 280px;
+        height: 80px !important;
+      }
+    }
+    &.shadow {
+      padding: 20px 24px !important;
+      .left-wrapper {
+        .logo .img {
+          width: 260px;
+          height: 50px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  :host {
+    padding: 20px 24px 20px 10px!important;
+    .left-wrapper {
+      .logo .img {
+        width: 250px;
+        height: 70px !important;
+      }
+    }
+    &.shadow {
+      padding: 20px 24px !important;
+      .left-wrapper {
+        .logo .img {
+          width: 230px;
+          height: 50px !important;
+        }
+      }
     }
   }
 }
