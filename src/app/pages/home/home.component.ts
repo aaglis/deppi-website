@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ICards } from '../../core/interfaces/cards.interface';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
 import { ButtonLayoutComponent } from '../../components/button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
 import { RouterLink } from '@angular/router';
+import { RouteRedirectService } from '../../core/services/route-redirect.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,29 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  private routerRedirectService = inject(RouteRedirectService)
+
+  ngOnInit(): void {
+    this.routerRedirectService.getSubject().subscribe((value) => {
+      if(value) {
+        this.scrollToSection()
+      } else {
+        console.log('caiu aqui')
+        setTimeout(() => {
+          this.scrollToSection()
+        }, 300)
+      }
+    })
+  }
+
+  scrollToSection() {
+    const element = document.getElementById('sobre');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   arrayCards: ICards[] = [
     {

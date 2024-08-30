@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, HostListener, inject } from '@angular/core';
 import { ButtonLayoutComponent } from '../button-layout/button-layout.component';
 import { LucideAngularModule } from 'lucide-angular';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { RouteRedirectService } from '../../core/services/route-redirect.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,17 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent implements AfterViewInit{
   private elementRef = inject(ElementRef)
+  private routerRedirect = inject(RouteRedirectService)
 
   switchImg: boolean = false
   lastScrollTop:number = 0
+
+  actualUrl(event: Event) {
+    event.preventDefault()
+    this.routerRedirect.navigateToSobre()
+  }
+
+  private router = inject(Router)
 
   closeNavbar() {
     // Sua lógica para fechar a navbar (por exemplo, esconder o menu)
@@ -62,6 +71,10 @@ export class HeaderComponent implements AfterViewInit{
       }
       this.lastScrollTop = scrollY
     })
+  }
+
+  scrollToSobre() {
+    this.router.navigate(['/home'])
   }
 
 }
