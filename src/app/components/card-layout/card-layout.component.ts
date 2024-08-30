@@ -1,10 +1,11 @@
 import { Component, HostBinding, Input } from '@angular/core';
 import { ICards } from '../../core/interfaces/cards.interface';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-card-layout',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './card-layout.component.html',
   styleUrl: './card-layout.component.scss'
 })

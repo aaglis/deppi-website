@@ -53,10 +53,12 @@ export class HeaderComponent implements AfterViewInit{
       } else {
         this.elementRef.nativeElement.classList.remove('shadow')
       }
-      if((scrollY > this.lastScrollTop) && (innerWidth > 1150)) {
+      if((scrollY > this.lastScrollTop)) {
         this.elementRef.nativeElement.style.top = '-150px'
       } else if ((scrollY < this.lastScrollTop) && (innerWidth > 1150)) {
         this.elementRef.nativeElement.style.top = '10px'
+      } else if((scrollY < this.lastScrollTop) && (innerWidth < 1150)) {
+        this.elementRef.nativeElement.style.top = '0'
       }
       this.lastScrollTop = scrollY
     })

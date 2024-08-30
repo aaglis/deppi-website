@@ -1,14 +1,13 @@
 @import '../../../variables.scss';
 :host {
   @include max-width-1720;
-  padding: 0 24px;
+  padding: 12rem 24px 0 24px;
 
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
   }
 
   .title {

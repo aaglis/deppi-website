@@ -50,7 +50,7 @@
 
   .initial-container {
     width: 100%;
-    height: calc(100vh - 250px);
+    height: 100vh;
     transition: .3s;
 
     display: flex;
@@ -186,7 +186,7 @@
   .text-wrapper {
     width: 100% !important;
     height: 100%;
-    padding-top: 3rem;
+    padding-top: 8rem;
   }
 }
 

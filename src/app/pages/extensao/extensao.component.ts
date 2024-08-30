@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ICards } from '../../core/interfaces/cards.interface';
 import { CardLayoutComponent } from '../../components/card-layout/card-layout.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-extensao',
   standalone: true,
-  imports: [HeaderComponent, CardLayoutComponent],
+  imports: [HeaderComponent, CardLayoutComponent, NgOptimizedImage],
   templateUrl: './extensao.component.html',
   styleUrl: './extensao.component.scss'
 })

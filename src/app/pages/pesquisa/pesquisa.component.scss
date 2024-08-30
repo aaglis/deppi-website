@@ -2,10 +2,9 @@
 
 :host {
   @include max-width-1720;
-  padding: 0 24px;
+  padding: 12rem 24px 0 24px;
   section {
     .initial-container {
-      padding-top: 4rem;
       .cards {
         display: flex;
         flex-direction: column;

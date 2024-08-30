@@ -38,31 +38,45 @@ nav {
   width: 100%;
   // max-width: 1720px;
   // margin: 0 auto;
-  z-index: 5;
+  z-index: 10;
   border-radius: 35px;
   transition: .3s;
-  &.shadow:not(.dark-theme) {
+  &.shadow {
     padding: 10px 25px !important;
-    background-color: lighten(#029a65, 10%);
     .img {
       height: 70px !important;
-    }
-    a:hover {
-      color: #fff;
     }
     button {
      height: 40px;
      width: 120px;
-     background-color: #fff;
-     color: #029a65;
     }
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
   }
+  &.shadow:not(.dark-theme) {
+    background-color: lighten(#029a65, 10%);
+    a:hover {
+      color: #fff;
+    }
+    button {
+     background-color: #fff;
+     color: #029a65;
+    }
+  }
   &.dark-theme {
-    position: inherit;
+    &.shadow {
+      background-color: #fff;
+      a {
+        color: #fff;
+        &:hover {
+          color: lighten(#029a65, 10%);
+        }
+      }
+    }
+    // position: inherit;
     .left-wrapper {
       .logo .img {
         background-image: url('../../../assets/icons/ifce-logo-dark.png');
+        transition: .3s;
       }
     }
     .right-wrapper {
@@ -89,6 +103,7 @@ nav {
       background-repeat: no-repeat;
       width: 300px;
       height: 130px;
+      transition: .3s;
     }
   }
 
@@ -152,10 +167,13 @@ nav {
 
 @media screen and (max-width: 1150px) {
   :host {
-    // position: inherit;
+    // background-color: #fff;
+    border-radius: 0;
     &.shadow:not(.dark-theme) {
-      padding: 0 24px;
-      background-color: transparent;
+      // padding: 0 24px;
+      border-radius: 0;
+      box-shadow: 0px 5px 70px 0px rgba(0,0,0,0.5);
+      // background-color: transparent;
       // .img {
       //   height: 70px !important;
       // }
@@ -165,7 +183,6 @@ nav {
        background-color: #fff;
        color: #029a65;
       }
-      box-shadow: none;
     }
   }
   .navigation {
