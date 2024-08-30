@@ -1,4 +1,10 @@
-<div class="container-header">
-  <app-header #HeaderComponent></app-header>
-</div>
-<router-outlet></router-outlet>
+@defer {
+  <div class="container-header">
+    <app-header #HeaderComponent></app-header>
+  </div>
+  <router-outlet></router-outlet>
+}
+@loading{
+  <!-- <img src="../assets/animated/spinner.gif" alt=""> -->
+    <app-loader></app-loader>
+}
