@@ -1,18 +1,18 @@
-<div class="container">
+<div class="container" role="contentinfo">
   <div class="container-infos">
     <div class="left-wrapper">
-      <div class="title">
+      <div class="title" role="banner">
         <p>Instituto Federal de Educação, Ciências e Tecnologia do Ceará - campus de Maracanaú</p>
         <p>Departamento de Extensão, Pesquisa, Pós-graduação e Inovação</p>
       </div>
-      <div class="address">
+      <div class="address" role="address">
         <p>Av. Parque Central, S/N - Distrito Industrial I - Maracanaú - CE<br>CEP: 61939-140</p>
       </div>
     </div>
     <div class="right-wrapper">
       <div class="contact">
         <div class="email">
-          <a href="mailto:deppi.maracanau&#64;ifce.edu.br" target="_blank">deppi.maracanau&#64;ifce.edu.br</a>
+          <p>Email: <a href="mailto:deppi.maracanau&#64;ifce.edu.br" target="_blank" aria-label="Email do Departamento de Extensão">deppi.maracanau&#64;ifce.edu.br</a></p>
         </div>
         <div class="fone">
           <p>Telefone: (85) 3512-8733 / (85) 3512-8753</p>
@@ -21,9 +21,9 @@
     </div>
   </div>
 
-  <div class="socials">
-    @for (item of arrayIcons; track $index) {
-      <lucide-icon name="{{item}}" [size]="30"></lucide-icon>
+  <div class="socials" role="complementary" aria-label="Redes sociais">
+    @for (item of arrayLinks; track $index) {
+      <a [href]="item.link" target="_blank"><lucide-icon name="{{item.iconName}}" [size]="30"></lucide-icon></a>
     }
   </div>
 </div>

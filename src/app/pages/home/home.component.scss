@@ -127,36 +127,41 @@
         font-family: 'Roboto', sans-serif;
       }
     }
-    button {
-      position: relative;
+    a {
       width: 200px;
       height: 50px;
       margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.01rem;
-      font-weight: 700;
-      border-style: none;
-      border-radius: 5px;
-      padding-right: 20px;
-      background-color: lighten(#029a65, 10%);
-      color: #fff;
-      transition: .3s;
-      &:hover {
-        background-color: lighten(#029a65, 20%);
-
-        lucide-icon {
-          right: 35px;
-        }
-      }
-      lucide-icon {
-        position: absolute;
+      button {
+        position: relative;
+        width: 200px;
+        height: 50px;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        right: 40px;
+        font-size: 1.01rem;
+        font-weight: 700;
+        border-style: none;
+        border-radius: 5px;
+        padding-right: 20px;
+        background-color: lighten(#029a65, 10%);
+        color: #fff;
         transition: .3s;
+        &:hover {
+          background-color: lighten(#029a65, 20%);
+
+          lucide-icon {
+            right: 35px;
+          }
+        }
+        lucide-icon {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: 40px;
+          transition: .3s;
+        }
       }
     }
   }
