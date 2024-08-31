@@ -5,10 +5,22 @@
     </div>
     <div class="contact-container">
       <form [formGroup]="form" (ngSubmit)="submitForm()">
-        <input type="text" placeholder="Seu nome">
-        <input type="email" placeholder="Seu email">
-        <textarea placeholder="Sua mensagem"></textarea>
-        <button app-button-layout>Enviar</button>
+        <input type="text" placeholder="Seu nome" formControlName="name" [value]="form.value.name">
+        <span class="warning-input"
+          [ngClass]="{ 'visible': form.get('name')?.invalid && form.get('name')?.touched}">
+          Nome não preenchido ou curto demais (mínimo de 5 caracteres)
+        </span>
+        <input type="email" placeholder="Seu email" formControlName="email" [value]="form.value.email">
+        <span class="warning-input"
+          [ngClass]="{ 'visible': form.get('email')?.invalid && form.get('email')?.touched}">
+          Email não preenchido ou inválido
+        </span>
+        <textarea placeholder="Sua mensagem" formControlName="message" [value]="form.value.message"></textarea>
+        <span class="warning-input"
+          [ngClass]="{ 'visible': form.get('message')?.invalid && form.get('message')?.touched}">
+          Menssagem não preenchida ou curta demais (mínimo de 10 caracteres)
+        </span>
+        <button type="submit" app-button-layout [disabled]="!form.valid">Enviar</button>
       </form>
       <div class="social-media-container">
         <div class="managers-area">

@@ -52,6 +52,15 @@
           background-color: lighten(#029a65, 20%);
         }
       }
+
+      .warning-input {
+        display: none;
+        color: red;
+        font-size: .9rem;
+        &.visible {
+          display: block;
+        }
+      }
     }
     .social-media-container {
       .managers-area {
