@@ -96,7 +96,8 @@ export class ContatoComponent implements OnInit{
     1400: { slidesPerView: 2 },
     1000: { slidesPerView: 2 },
     600: { slidesPerView: 1 },
-    400: { slidesPerView: 1 }
+    400: { slidesPerView: 1 },
+    200: { slidesPerView: 1 }
   };
 
   managersArray: IManager[] = [

@@ -43,6 +43,11 @@ nav {
     button {
      height: 40px;
      width: 120px;
+     background-color: #fff;
+     color: #029a65;
+     &:hover {
+       background-color: lighten(#029a65, 60%);
+     }
     }
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
   }
@@ -50,13 +55,6 @@ nav {
     background-color: lighten(#029a65, 10%);
     a:hover {
       color: #fff;
-    }
-    .right-wrapper .navigation .contact-btn button {
-      background-color: #fff;
-      color: #029a65;
-      &:hover {
-        background-color: lighten(#029a65, 60%);
-      }
     }
   }
   &.dark-theme {
